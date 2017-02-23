@@ -7,14 +7,14 @@ class Crypter {
 	 *
 	 * @var string
 	 */
-	public static $cipher = MCRYPT_RIJNDAEL_256;
+	public static $cipher = 'AES-256-CBC';
 
 	/**
 	 * The encryption mode.
 	 *
 	 * @var string
 	 */
-	public static $mode = MCRYPT_MODE_CBC;
+	// public static $mode = MCRYPT_MODE_CBC;
 
 	/**
 	 * The block size of the cipher.
@@ -33,11 +33,9 @@ class Crypter {
 	 */
 	public static function encrypt($value)
 	{
-		$iv = mcrypt_create_iv(static::iv_size(), static::randomizer());
+		$iv = openssl_random_pseudo_bytes(static::iv_size());
 
-		$value = static::pad($value);
-
-		$value = mcrypt_encrypt(static::$cipher, static::key(), $value, static::$mode, $iv);
+		$value = openssl_encrypt($value, static::$cipher, static::key(), OPENSSL_RAW_DATA, $iv);
 
 		return base64_encode($iv.$value);
 	}
@@ -64,9 +62,9 @@ class Crypter {
 		// so we will trim all of the padding characters.
 		$key = static::key();
 
-		$value = mcrypt_decrypt(static::$cipher, $key, $value, static::$mode, $iv);
+		$value = openssl_decrypt($value, static::$cipher, $key, OPENSSL_RAW_DATA, $iv);
 
-		return static::unpad($value);
+		return $value;
 	}
 
 	/**

@@ -1,9 +1,11 @@
-# [Laravel](http://laravel.com) - A PHP Framework For Web Artisans
+# [Laravel 3](https://github.com/vhanla/laravel/tree/3.0) - A PHP Framework For Web Artisans
 
 Laravel is a clean and classy framework for PHP web development. Freeing you
 from spaghetti code, Laravel helps you create wonderful applications using
 simple, expressive syntax. Development should be a creative experience that you
 enjoy, not something that is painful. Enjoy the fresh air.
+
+__NOTICE__ This is an unofficial fork which adds support for PHP 7, but it is not completely tested, please report if there are issues.
 
 [Official Website & Documentation](http://laravel.com)
 
