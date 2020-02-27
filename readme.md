@@ -1,4 +1,4 @@
-# [Laravel 3](https://github.com/vhanla/laravel/tree/3.0) - A PHP Framework For Web Artisans
+# [Laravel 3 supports PHP 7.4.x](https://github.com/vhanla/laravel/tree/3.0) - A PHP Framework For Web Artisans
 
 Laravel is a clean and classy framework for PHP web development. Freeing you
 from spaghetti code, Laravel helps you create wonderful applications using
